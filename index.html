@@ -19,17 +19,76 @@
     <link href="css/styles.css" rel="stylesheet" />
     <style>
       /* top ribbon */
-      .top-ribbon { position: fixed; top: 0; left: 0; right: 0; z-index: 1040; }
-      @media (max-width: 991.98px){ .ribbon-hide-sm { display:none; } }
-      /* offset navbar under ribbon */
-      #mainNav { top: 32px; }
+      .top-ribbon {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1040;
+      }
+
+      @media (max-width: 991.98px){
+        .ribbon-hide-sm { display:none; }
+      }
+
+      /* offset navbar under ribbon on desktop */
+      #mainNav {
+        top: 32px;
+      }
+
+      /* On small screens, let the ribbon scroll and reset navbar position */
+      @media (max-width: 767.98px) {
+        .top-ribbon {
+          position: static;
+        }
+        #mainNav {
+          top: 0;
+        }
+      }
+
+      /* masthead background behaviour */
+      .masthead {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+      }
+
+      /* Tweak masthead spacing on smaller screens so content fits and image feels full */
+      @media (max-width: 991.98px) {
+        .masthead {
+          padding-top: 8rem;
+          padding-bottom: 3rem;
+        }
+      }
+
       /* floating buttons */
-      .floating-buttons { position: fixed; bottom: 30px; right: 20px; z-index: 1050; display: flex; flex-direction: column; gap: 10px; }
-      .floating-buttons a { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; }
+      .floating-buttons {
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .floating-buttons a {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 22px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        text-decoration: none;
+      }
       .btn-whatsapp { background-color: #25D366; }
       .btn-phone { background-color: #0d6efd; }
       .btn-email { background-color: #6c757d; }
       .floating-buttons a:hover { opacity: 0.9; }
+
       /* responsive logo */
       .site-logo { height: 100px; width: auto; }
       @media (max-width: 768px){
